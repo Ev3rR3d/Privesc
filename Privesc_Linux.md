@@ -1,6 +1,3 @@
-#hacklinux 
-
-# Linux Privesc TCM & Tib3rius
 
 Linux PrivEsc Arena - THM
 Connect via ssh
