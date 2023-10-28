@@ -333,7 +333,6 @@ ___
 - As permissões que procuramos são `SERVICE_STOP, SERVICE_START, SERVICE_CHANGE_CONFIG E SERVICE_ALL_ACCESS`
 - Se alterar as configs, mas não puder restartar, não da pra escalar assim
 
-![[Pasted image 20230209172559.png]]
 
 ```
 # Para validar:
@@ -558,7 +557,6 @@ sc start <servicename>
 - No exemplo: `C:\Program Files\Unquoted Path Service\Common Files\unquotedpathservice.exe`, o Windows tentará achar um executável em `Program.exe; Unquoted.exe; Common.exe`, por conta dos espaços ele acha que o que vem a seguir é o argumento de um binário. Tipo rodar `whoami` em vez de `whoami.exe`
 - É mais comom esquever depois do program files, por conta das permissões de usuário comum
 
-![[Pasted image 20230209180326.png]]
 
 ```
 sc qc <serviço>
